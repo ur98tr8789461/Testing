@@ -1,0 +1,13 @@
+/* Keep the hero action and its supporting portfolio note aligned. */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.hero-note {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .03em;
+}

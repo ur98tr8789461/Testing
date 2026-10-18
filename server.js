@@ -8,6 +8,18 @@ const publicDirectory = path.join(__dirname, 'public');
 app.disable('x-powered-by');
 app.use((_request, response, next) => {
   response.set({
+    'Content-Security-Policy': [
+      "default-src 'self'",
+      "base-uri 'self'",
+      "form-action 'self'",
+      "frame-ancestors 'none'",
+      "object-src 'none'",
+      "img-src 'self' https://images.unsplash.com data:",
+      "style-src 'self' https://fonts.googleapis.com",
+      "font-src 'self' https://fonts.gstatic.com",
+      "script-src 'self'",
+      'upgrade-insecure-requests',
+    ].join('; '),
     'X-Content-Type-Options': 'nosniff',
     'X-Frame-Options': 'DENY',
     'Referrer-Policy': 'strict-origin-when-cross-origin',

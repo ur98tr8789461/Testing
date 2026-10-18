@@ -30,7 +30,7 @@ app.use((_request, response, next) => {
 app.use(express.static(publicDirectory, { maxAge: '1h' }));
 
 app.use((_request, response) => {
-  response.status(404).type('text').send('Not found');
+  response.status(404).sendFile(path.join(publicDirectory, '404.html'));
 });
 
 app.listen(port, () => {

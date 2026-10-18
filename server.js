@@ -8,8 +8,8 @@ const publicDirectory = path.join(__dirname, 'public');
 app.disable('x-powered-by');
 app.use(express.static(publicDirectory, { maxAge: '1h' }));
 
-app.get('*', (_request, response) => {
-  response.sendFile(path.join(publicDirectory, 'index.html'));
+app.use((_request, response) => {
+  response.status(404).type('text').send('Not found');
 });
 
 app.listen(port, () => {

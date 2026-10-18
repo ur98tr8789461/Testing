@@ -1,3 +1,7 @@
+/* Normalize browser defaults that otherwise distort the hero grid and image cards. */
+.hero-image-wrap { margin: 0; }
+.lightbox-trigger { display: block; }
+
 /* Keep the hero action and its supporting portfolio note aligned. */
 .hero-actions {
   display: flex;

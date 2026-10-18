@@ -6,6 +6,15 @@ const port = Number(process.env.PORT) || 3000;
 const publicDirectory = path.join(__dirname, 'public');
 
 app.disable('x-powered-by');
+app.use((_request, response, next) => {
+  response.set({
+    'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'DENY',
+    'Referrer-Policy': 'strict-origin-when-cross-origin',
+    'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+  });
+  next();
+});
 app.use(express.static(publicDirectory, { maxAge: '1h' }));
 
 app.use((_request, response) => {

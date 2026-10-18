@@ -28,6 +28,35 @@
     });
   });
 
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImage = lightbox?.querySelector('.lightbox-image');
+  const lightboxCaption = lightbox?.querySelector('.lightbox-caption');
+  const lightboxClose = lightbox?.querySelector('.lightbox-close');
+
+  if (lightbox && typeof lightbox.showModal === 'function' && lightboxImage && lightboxClose) {
+    document.querySelectorAll('.lightbox-trigger').forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        const thumbnail = trigger.querySelector('img');
+        const card = trigger.closest('.gallery-card');
+        const title = card?.querySelector('h3')?.textContent.trim() ?? '';
+        const details = card?.querySelector('.card-meta p')?.textContent.trim() ?? '';
+
+        lightboxImage.src = trigger.href;
+        lightboxImage.alt = thumbnail?.alt ?? title;
+        if (lightboxCaption) {
+          lightboxCaption.textContent = [title, details].filter(Boolean).join(' · ');
+        }
+        lightbox.showModal();
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => lightbox.close());
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+  }
+
   const menuToggle = document.querySelector('.menu-toggle');
   const siteNav = document.querySelector('#site-nav');
 

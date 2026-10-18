@@ -23,7 +23,8 @@
       if (galleryStatus) {
         const filterLabel = button.textContent.trim();
         const photographLabel = visibleCount === 1 ? 'photograph' : 'photographs';
-        galleryStatus.textContent = `Showing ${visibleCount} ${filterLabel.toLowerCase()} ${photographLabel}.`;
+        const filterContext = selectedFilter === 'all' ? '' : ` in ${filterLabel}`;
+        galleryStatus.textContent = `Showing ${visibleCount} ${photographLabel}${filterContext}.`;
       }
     });
   });

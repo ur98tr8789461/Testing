@@ -15,3 +15,13 @@
   font-size: 10px;
   letter-spacing: .03em;
 }
+
+/* Keep hover zoom inside the image link without clipping keyboard focus rings. */
+.gallery-card { overflow: visible; }
+.lightbox-trigger { overflow: hidden; }
+.lightbox-trigger:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+.lightbox-trigger img { transition: transform .45s; }
+.lightbox-trigger:hover img { transform: scale(1.025); }

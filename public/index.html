@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f4ef">
+    <meta name="description" content="Sean is a photographer capturing honest moments, wild places, and the people who make them matter.">
+    <title>Sean — Photographer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#home" aria-label="Sean Photography home">SEAN<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#work">Selected work</a>
+        <a href="#about">About</a>
+        <a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> Photographer & visual storyteller</p>
+          <h1>Finding the<br> extraordinary in<br><em>the everyday.</em></h1>
+          <p class="hero-intro">Honest images for the people, places, and little in-between moments worth remembering.</p>
+          <a class="text-link" href="#work">Explore the work <span aria-hidden="true">↓</span></a>
+          <p class="hero-location">Currently in Portland, Oregon <span>·</span> Available worldwide</p>
+        </div>
+        <div class="hero-image-wrap">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1500&q=85" alt="A quiet alpine lake reflecting the mountains at sunrise" fetchpriority="high">
+          <div class="image-caption"><span>01 / 04</span><span>Somewhere in the mountains</span></div>
+          <span class="hero-stamp" aria-hidden="true">STORIES<br>IN STILLNESS</span>
+        </div>
+        <span class="hero-index" aria-hidden="true">PORTFOLIO — 2025</span>
+      </section>
+
+      <section class="work section-wrap" id="work">
+        <div class="section-heading">
+          <div><p class="eyebrow">A few things I’ve seen</p><h2>Selected <em>work</em></h2></div>
+          <p class="section-note">A collection of moments, gathered<br>with care and a little curiosity.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter photographs">
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All work</button>
+          <button class="filter-button" type="button" data-filter="landscape" aria-pressed="false">Landscape</button>
+          <button class="filter-button" type="button" data-filter="people" aria-pressed="false">People</button>
+          <button class="filter-button" type="button" data-filter="details" aria-pressed="false">Little details</button>
+        </div>
+        <div class="gallery">
+          <article class="gallery-card card-tall" data-category="landscape">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=85" alt="Sunlight falling across a quiet mountain valley" loading="lazy">
+            <div class="card-meta"><div><h3>Where the road ends</h3><p>Oregon, 2024</p></div><span>Landscape</span></div>
+          </article>
+          <article class="gallery-card card-offset" data-category="people">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85" alt="A sunlit portrait with a warm, candid expression" loading="lazy">
+            <div class="card-meta"><div><h3>Soft afternoon</h3><p>Portland, 2024</p></div><span>Portrait</span></div>
+          </article>
+          <article class="gallery-card" data-category="details">
+            <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1100&q=85" alt="Golden morning light over a misty field" loading="lazy">
+            <div class="card-meta"><div><h3>First light</h3><p>Columbia River Gorge, 2023</p></div><span>Details</span></div>
+          </article>
+          <article class="gallery-card card-wide" data-category="landscape">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1500&q=85" alt="A dramatic line of rugged mountains under a clear sky" loading="lazy">
+            <div class="card-meta"><div><h3>A little further out</h3><p>Washington, 2023</p></div><span>Landscape</span></div>
+          </article>
+        </div>
+        <p class="gallery-footnote">A small window into a much bigger world. More stories coming soon.</p>
+      </section>
+
+      <section class="about" id="about">
+        <div class="about-image"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85" alt="Photographer Sean outdoors in natural light" loading="lazy"><span class="about-image-note">Usually looking for the good light.</span></div>
+        <div class="about-copy"><p class="eyebrow">A little about me</p><h2>Hi, I’m Sean.<br><em>Glad you’re here.</em></h2><p>I’m a photographer drawn to the in-between: the unplanned laugh, the long way home, the light that only lasts a minute. I make thoughtful images for good people and meaningful places.</p><p>When I’m not behind the camera, you’ll find me wandering a trail, hunting down the best coffee in town, or taking the scenic route just because.</p><a class="text-link" href="#contact">A bit more about working together <span aria-hidden="true">↗</span></a></div>
+      </section>
+
+      <section class="contact section-wrap" id="contact">
+        <p class="eyebrow">Have something in mind?</p>
+        <h2>Let’s make something<br><em>that feels like you.</em></h2>
+        <p>Portraits, intimate celebrations, little brands, big adventures. Tell me what you’re dreaming up.</p>
+        <a class="contact-button" href="mailto:hello@seansphotography.com">Get in touch <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a class="wordmark" href="#home">SEAN<span>.</span></a><p>Made slowly, with feeling. © <span id="year">2025</span> Sean Photography</p><a href="#home">Back to top ↑</a></footer>
+  </body>
+</html>

@@ -49,6 +49,10 @@
     window.matchMedia('(min-width: 601px)').addEventListener('change', closeMenu);
   }
 
+  const currentYear = String(new Date().getFullYear());
   const year = document.querySelector('#year');
-  if (year) year.textContent = String(new Date().getFullYear());
+  const portfolioYear = document.querySelector('#portfolio-year');
+
+  if (year) year.textContent = currentYear;
+  if (portfolioYear) portfolioYear.textContent = currentYear;
 })();

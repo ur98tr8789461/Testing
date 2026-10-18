@@ -1,10 +1,12 @@
 (() => {
   const filterButtons = document.querySelectorAll('.filter-button');
   const galleryCards = document.querySelectorAll('.gallery-card');
+  const galleryStatus = document.querySelector('#gallery-status');
 
   filterButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const selectedFilter = button.dataset.filter;
+      let visibleCount = 0;
 
       filterButtons.forEach((filterButton) => {
         const isActive = filterButton === button;
@@ -13,8 +15,16 @@
       });
 
       galleryCards.forEach((card) => {
-        card.hidden = selectedFilter !== 'all' && card.dataset.category !== selectedFilter;
+        const isVisible = selectedFilter === 'all' || card.dataset.category === selectedFilter;
+        card.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
       });
+
+      if (galleryStatus) {
+        const filterLabel = button.textContent.trim();
+        const photographLabel = visibleCount === 1 ? 'photograph' : 'photographs';
+        galleryStatus.textContent = `Showing ${visibleCount} ${filterLabel.toLowerCase()} ${photographLabel}.`;
+      }
     });
   });
 

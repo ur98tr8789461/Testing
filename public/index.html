@@ -54,19 +54,27 @@
         </div>
         <div class="gallery">
           <article class="gallery-card card-tall" data-category="landscape">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=85" alt="Sunlight falling across a quiet mountain valley" loading="lazy">
+            <a class="lightbox-trigger" href="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=90" aria-label="View Where the road ends larger">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=85" alt="Sunlight falling across a quiet mountain valley" loading="lazy">
+            </a>
             <div class="card-meta"><div><h3>Where the road ends</h3><p>Oregon, 2024</p></div><span>Landscape</span></div>
           </article>
           <article class="gallery-card card-offset" data-category="people">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85" alt="A sunlit portrait with a warm, candid expression" loading="lazy">
+            <a class="lightbox-trigger" href="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=2000&q=90" aria-label="View Soft afternoon larger">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85" alt="A sunlit portrait with a warm, candid expression" loading="lazy">
+            </a>
             <div class="card-meta"><div><h3>Soft afternoon</h3><p>Portland, 2024</p></div><span>Portrait</span></div>
           </article>
           <article class="gallery-card" data-category="details">
-            <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1100&q=85" alt="Golden morning light over a misty field" loading="lazy">
+            <a class="lightbox-trigger" href="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=2000&q=90" aria-label="View First light larger">
+              <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1100&q=85" alt="Golden morning light over a misty field" loading="lazy">
+            </a>
             <div class="card-meta"><div><h3>First light</h3><p>Columbia River Gorge, 2023</p></div><span>Details</span></div>
           </article>
           <article class="gallery-card card-wide" data-category="landscape">
-            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1500&q=85" alt="A dramatic line of rugged mountains under a clear sky" loading="lazy">
+            <a class="lightbox-trigger" href="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=90" aria-label="View A little further out larger">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1500&q=85" alt="A dramatic line of rugged mountains under a clear sky" loading="lazy">
+            </a>
             <div class="card-meta"><div><h3>A little further out</h3><p>Washington, 2023</p></div><span>Landscape</span></div>
           </article>
         </div>
@@ -86,6 +94,12 @@
         <a class="contact-button" href="mailto:hello@seansphotography.com">Get in touch <span aria-hidden="true">↗</span></a>
       </section>
     </main>
+
+    <dialog class="lightbox" aria-label="Photograph preview">
+      <button class="lightbox-close" type="button" aria-label="Close photograph preview">×</button>
+      <img class="lightbox-image" alt="">
+      <p class="lightbox-caption"></p>
+    </dialog>
 
     <footer class="site-footer"><a class="wordmark" href="#home">SEAN<span>.</span></a><p>Made slowly, with feeling. © <span id="year">2025</span> Sean Photography</p><a href="#home">Back to top ↑</a></footer>
   </body>

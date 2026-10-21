@@ -34,14 +34,25 @@
 .contact h2 em { color: var(--accent); }
 .contact-button { background: var(--accent); color: #081323; }
 .contact-button:hover { background: #b4d3ff; color: #081323; }
-.lightbox { border-color: rgb(131 180 255 / 28%); }
+.lightbox {
+  border-color: rgb(131 180 255 / 28%);
+  background: var(--surface);
+  color: var(--ink);
+}
 .lightbox::backdrop { background: rgb(3 8 17 / 90%); }
 .lightbox-close,
 .lightbox-previous,
-.lightbox-next { border-color: rgb(131 180 255 / 42%); }
+.lightbox-next {
+  border-color: rgb(131 180 255 / 42%);
+  background: rgb(11 18 32 / 88%);
+  color: var(--ink);
+}
 .lightbox-close:hover,
 .lightbox-previous:hover,
-.lightbox-next:hover { border-color: var(--accent); }
+.lightbox-next:hover {
+  border-color: var(--accent);
+  background: #203652;
+}
 .lightbox-close:focus-visible,
 .lightbox-previous:focus-visible,
 .lightbox-next:focus-visible { outline-color: var(--accent); }

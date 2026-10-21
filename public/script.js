@@ -33,23 +33,53 @@
   const lightboxImage = lightbox?.querySelector('.lightbox-image');
   const lightboxCaption = lightbox?.querySelector('.lightbox-caption');
   const lightboxClose = lightbox?.querySelector('.lightbox-close');
+  const lightboxPrevious = lightbox?.querySelector('.lightbox-previous');
+  const lightboxNext = lightbox?.querySelector('.lightbox-next');
 
   if (lightbox && typeof lightbox.showModal === 'function' && lightboxImage && lightboxClose) {
+    let activeTrigger = null;
+
+    const showPhotograph = (trigger) => {
+      const thumbnail = trigger.querySelector('img');
+      const card = trigger.closest('.gallery-card');
+      const title = card?.querySelector('h3')?.textContent.trim() ?? '';
+      const details = card?.querySelector('.card-meta p')?.textContent.trim() ?? '';
+
+      activeTrigger = trigger;
+      lightboxImage.src = trigger.href;
+      lightboxImage.alt = thumbnail?.alt ?? title;
+      if (lightboxCaption) {
+        lightboxCaption.textContent = [title, details].filter(Boolean).join(' · ');
+      }
+    };
+
+    const movePhotograph = (direction) => {
+      const visibleTriggers = Array.from(document.querySelectorAll('.gallery-card:not([hidden]) .lightbox-trigger'));
+      if (visibleTriggers.length < 2) return;
+
+      const currentIndex = visibleTriggers.indexOf(activeTrigger);
+      const nextIndex = (currentIndex + direction + visibleTriggers.length) % visibleTriggers.length;
+      showPhotograph(visibleTriggers[nextIndex]);
+    };
+
     document.querySelectorAll('.lightbox-trigger').forEach((trigger) => {
       trigger.addEventListener('click', (event) => {
         event.preventDefault();
-        const thumbnail = trigger.querySelector('img');
-        const card = trigger.closest('.gallery-card');
-        const title = card?.querySelector('h3')?.textContent.trim() ?? '';
-        const details = card?.querySelector('.card-meta p')?.textContent.trim() ?? '';
-
-        lightboxImage.src = trigger.href;
-        lightboxImage.alt = thumbnail?.alt ?? title;
-        if (lightboxCaption) {
-          lightboxCaption.textContent = [title, details].filter(Boolean).join(' · ');
-        }
+        showPhotograph(trigger);
         lightbox.showModal();
       });
+    });
+
+    lightboxPrevious?.addEventListener('click', () => movePhotograph(-1));
+    lightboxNext?.addEventListener('click', () => movePhotograph(1));
+    lightbox.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        movePhotograph(-1);
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        movePhotograph(1);
+      }
     });
 
     lightboxClose.addEventListener('click', () => lightbox.close());

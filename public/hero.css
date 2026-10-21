@@ -25,3 +25,61 @@
 }
 .lightbox-trigger img { transition: transform .45s; }
 .lightbox-trigger:hover img { transform: scale(1.025); }
+
+/* Editorial polish: anchor navigation and clarify the primary interactions. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgb(246 244 239 / 92%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.nav-contact { border-radius: 2px; }
+.text-link { transition: color .2s; }
+.text-link:hover { color: var(--accent); }
+.filter-button { padding: 9px 17px; }
+.filter-button:focus-visible { outline-offset: 3px; }
+
+/* Give the closing call to action a stronger visual anchor. */
+.contact {
+  position: relative;
+  overflow: hidden;
+  background: #292a24;
+  color: var(--paper);
+}
+.contact::before,
+.contact::after {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgb(246 244 239 / 10%);
+  border-radius: 50%;
+  content: '';
+  pointer-events: none;
+}
+.contact::before { top: -145px; left: -100px; }
+.contact::after { right: -110px; bottom: -170px; width: 340px; height: 340px; }
+.contact .eyebrow, .contact > p:not(.eyebrow) { color: #c2c0b7; }
+.contact h2 em { color: #d79a7c; }
+.contact-button {
+  position: relative;
+  z-index: 1;
+  background: var(--paper);
+  color: var(--ink);
+}
+.contact-button:hover { background: #d79a7c; color: var(--ink); }
+
+.gallery-card img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.lightbox-trigger:hover img { transform: scale(1.035); }
+
+@media (max-width: 600px) {
+  .site-header { position: sticky; }
+  .contact::before { width: 180px; height: 180px; }
+  .contact::after { width: 230px; height: 230px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card img, .lightbox-trigger img { transition: none; }
+}

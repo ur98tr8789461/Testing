@@ -1,0 +1,53 @@
+/* Dark blue palette overrides, loaded after the structural stylesheets. */
+:root {
+  color-scheme: dark;
+  --paper: #0b1220;
+  --ink: #e8effa;
+  --muted: #a0aec2;
+  --accent: #83b4ff;
+  --line: #293951;
+  --surface: #121e31;
+}
+
+::selection { background: #355b8f; color: #fff; }
+:focus-visible { outline-color: var(--accent); }
+.site-header {
+  background: rgb(11 18 32 / 92%);
+  border-bottom-color: rgb(232 239 250 / 10%);
+}
+.nav-contact { border-color: var(--ink); }
+.nav-contact:hover { background: var(--ink); color: var(--paper); }
+.status-dot { background: #7bc49a; }
+.image-caption { background: linear-gradient(transparent, rgb(0 0 0 / 58%)); }
+.hero-stamp { background: var(--surface); color: var(--accent); }
+.gallery-card img { background: var(--surface); }
+.about { background: var(--surface); }
+.about-copy > p:not(.eyebrow) { color: var(--muted); }
+.contact {
+  background: #101d31;
+  color: var(--ink);
+}
+.contact::before,
+.contact::after { border-color: rgb(232 239 250 / 12%); }
+.contact .eyebrow,
+.contact > p:not(.eyebrow) { color: #b7c5d9; }
+.contact h2 em { color: var(--accent); }
+.contact-button { background: var(--accent); color: #081323; }
+.contact-button:hover { background: #b4d3ff; color: #081323; }
+.lightbox { border-color: rgb(131 180 255 / 28%); }
+.lightbox::backdrop { background: rgb(3 8 17 / 90%); }
+.lightbox-close,
+.lightbox-previous,
+.lightbox-next { border-color: rgb(131 180 255 / 42%); }
+.lightbox-close:hover,
+.lightbox-previous:hover,
+.lightbox-next:hover { border-color: var(--accent); }
+.lightbox-close:focus-visible,
+.lightbox-previous:focus-visible,
+.lightbox-next:focus-visible { outline-color: var(--accent); }
+.site-footer { border-top-color: var(--line); }
+
+@media (max-width: 600px) {
+  .site-nav { background: var(--paper); }
+  .menu-toggle span { background: var(--ink); }
+}

@@ -79,6 +79,13 @@
       if (event.target.closest('a')) closeMenu();
     });
 
+    document.addEventListener('click', (event) => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      if (isExpanded && !menuToggle.contains(event.target) && !siteNav.contains(event.target)) {
+        closeMenu();
+      }
+    });
+
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
         closeMenu();
